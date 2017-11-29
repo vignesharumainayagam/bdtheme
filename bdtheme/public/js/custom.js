@@ -11,16 +11,24 @@ for(var i=0; i<sfit_module.length; i++){
 	callback: function(r){
 	console.log(r.message)	
 	for (var j = 0; j < r.message.data.length; j++) {
-	$('.sidebar-menu').append('<li class="treeview" >\
-          <a href="#">\
-            <i class="fa fa-phone-square"></i>\
+		var h='';
+		for(var k = 0; k < r.message.data[j].items.length; k++){ if(h){
+		 h  = h +'<li><a href="#List/'+r.message.data[j].items[k].name+'"><i class="fa fa-circle-o"></i>'+r.message.data[j].items[k].name+'</a></li>'
+
+		}
+		else{
+		 h  ='<li><a href="#List/'+r.message.data[j].items[k].name+'"><i class="fa fa-circle-o"></i>'+r.message.data[j].items[k].name+'</a></li>'
+
+		}
+		  }
+			$('.sidebar-menu').append('<li class="treeview" ><a href="#"><i class="fa fa-folder"></i>\
             <span>'+r.message.data[j].label+'</span>\
             <span class="pull-right-container">\
               <i class="fa fa-angle-left pull-right"></i>\
             </span>\
           </a>\
           <ul class="treeview-menu">\
-            <li><a href="#List/Lead"><i class="fa fa-circle-o"></i> Lead</a></li>\
+ 			'+h+'\
           </ul>\
         </li>');	
 	}
