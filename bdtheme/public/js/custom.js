@@ -1,5 +1,5 @@
 var sfit_module = ["SFIT","Workout", "Diet"];
-
+var icons = []
 
 function get_doctypes(module){	
 for(var i=0; i<sfit_module.length; i++){
@@ -21,7 +21,7 @@ for(var i=0; i<sfit_module.length; i++){
 
 		}
 		  }
-			$('.sidebar-menu').append('<li class="treeview" ><a href="#"><i class="fa fa-folder"></i>\
+			$('.sidebar-menu').append('<li class="treeview" ><a href="#"><i class="fa fa-eercast"></i>\
             <span>'+r.message.data[j].label+'</span>\
             <span class="pull-right-container">\
               <i class="fa fa-angle-left pull-right"></i>\
