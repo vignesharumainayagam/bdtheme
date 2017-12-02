@@ -1,5 +1,5 @@
 var sfit_module = ["SFIT","Workout", "Diet"];
-var icons = []
+var icons = ["bicycle", "user-o", "beer", "cubes", "university", "handshake-o"];
 
 function get_doctypes(module){	
 for(var i=0; i<sfit_module.length; i++){
@@ -8,8 +8,7 @@ for(var i=0; i<sfit_module.length; i++){
 	args: {
 	module: module[i]
 	},	
-	callback: function(r){
-	console.log(r.message)	
+	callback: function(r){	
 	for (var j = 0; j < r.message.data.length; j++) {
 		var h='';
 		for(var k = 0; k < r.message.data[j].items.length; k++){ if(h){
@@ -21,7 +20,7 @@ for(var i=0; i<sfit_module.length; i++){
 
 		}
 		  }
-			$('.sidebar-menu').append('<li class="treeview" ><a href="#"><i class="fa fa-eercast"></i>\
+			$('#menu123').append('<li class="treeview" ><a href="#"><i class="fa fa-'+icons[j]+'"></i>\
             <span>'+r.message.data[j].label+'</span>\
             <span class="pull-right-container">\
               <i class="fa fa-angle-left pull-right"></i>\
