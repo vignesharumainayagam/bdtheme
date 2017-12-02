@@ -2,6 +2,7 @@ var sfit_module = ["SFIT","Workout", "Diet"];
 var icons = ["bicycle", "user-o", "beer", "cubes", "university", "handshake-o"];
 
 function get_doctypes(module){	
+var o = 0;
 for(var i=0; i<sfit_module.length; i++){
 	frappe.call({
 	method: "frappe.desk.moduleview.get",
@@ -20,7 +21,7 @@ for(var i=0; i<sfit_module.length; i++){
 
 		}
 		  }
-			$('#menu123').append('<li class="treeview" ><a href="#"><i class="fa fa-'+icons[j]+'"></i>\
+			$('#menu123').append('<li class="treeview" ><a href="#"><i class="fa fa-'+icons[o]+'"></i>\
             <span>'+r.message.data[j].label+'</span>\
             <span class="pull-right-container">\
               <i class="fa fa-angle-left pull-right"></i>\
@@ -30,6 +31,7 @@ for(var i=0; i<sfit_module.length; i++){
  			'+h+'\
           </ul>\
         </li>');	
+			o++;
 	}
 	},
 	freeze: true,
